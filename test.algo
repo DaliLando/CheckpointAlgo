@@ -14,7 +14,7 @@ BEGIN
 
     words:=0;
     FOR j FROM 0 TO lgth-1 STEP step  DO // iterating the sentence char by char
-        IF (str[i]=" ") THEN 
+        IF (str[j]=" ") THEN 
             words:= words +1; // we add 1 to the counter anytime we find a space, indicating the presence of a word;
         END_IF
     END_FOR
@@ -23,7 +23,7 @@ BEGIN
 
     vow:=0;
     FOR k FROM 0 TO lgth-1 STEP step  DO // iterating the sentence char by  char;
-        SWITCH (str[i]) DO // we test the char in pos i to confirm if it match with cases below;
+        SWITCH (str[k]) DO // we test the char in pos i to confirm if it match with cases below;
             case "a" : vow:=vow+1;
             break;
             case "e" : vow:=vow+1;
