@@ -1,0 +1,43 @@
+ALGORITHM check
+VAR
+    str:STRING;
+   i,j,k,lgth,words,vow:INTEGER;
+BEGIN
+    read(str); // reading the sentence given;
+    i:=0;// 
+    lgth:=1; // given that the last character is always a point and the while loop won't consider it, we start the counter from 1;
+    WHILE (str[i] NOT ".") DO
+        lgth :=lgth+1; // as long as the character in pos i is not a ".", we add 1 to the counter;
+        i:= i + 1; // incrementing the while counter;
+    END_WHILE
+    write ("the sentence have :"+ lgth +"characters")
+
+    words:=0;
+    FOR j FROM 0 TO lgth-1 STEP step  DO // iterating the sentence char by char
+        IF (str[i]=" ") THEN 
+            words:= words +1; // we add 1 to the counter anytime we find a space, indicating the presence of a word;
+        END_IF
+    END_FOR
+    words:=words+1;
+    write("this sentence have :",words,"words");
+
+    vow:=0;
+    FOR k FROM 0 TO lgth-1 STEP step  DO // iterating the sentence char by  char;
+        SWITCH (str[i]) DO // we test the char in pos i to confirm if it match with cases below;
+            case "a" : vow:=vow+1;
+            break;
+            case "e" : vow:=vow+1;
+            break;
+            case "i" : vow:=vow+1;
+            break;
+            case "o" : vow:=vow+1;
+            break;
+            case "u" : vow:=vow+1;
+            break;
+            // if char matches we add 1 to the counter;
+            default :break // if it doesn"t match nothing happens;
+        END_SWITCH
+    END_FOR
+    write ("this sentence have : ",vow,"vowel(s)");
+    
+END
